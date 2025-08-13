@@ -25,6 +25,6 @@ React, JavaScript, HTML, CSS
 4. Enter "npm run dev" in the terminal
 
 ## Screenshot
-![Profile Card Screenshot](.src/assets/Img/ScreenshotFinalResult.png)
+![Profile Card Screenshot](./src/assets/Img/ScreenshotFinalResult.png)
 
 
