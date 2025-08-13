@@ -1,5 +1,7 @@
 import { useState } from "react";
 import profilePic from "../assets/Img/profilePic.jpg"; 
+import ContactInfo from "./ContactInfo";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function capitalizeWords(str) {
   return str.replace(/\b\w/g, char => char.toUpperCase());
@@ -14,7 +16,7 @@ export default function ProfileCard() {
     <article className="hero-card">
 
       <div className="hero-photo-wrap">
-        <img className="hero-photo" src={profilePic} alt="{fallName}" />
+        <img className="hero-photo" src={profilePic} alt="{fullName}" />
         <div className="photo-overlay" />
       </div>
 
@@ -33,17 +35,31 @@ export default function ProfileCard() {
           {showContact ? "Hide my contact" : "Display my contact"}
         </button>
 
-        {showContact && (
-          <div className="contact">
-            <p>Email: <a href="mailto:xxx@example.com">xxx@example.com</a></p>
-            <p>Phone: <a href="tel:+1xxxxxxxxx">+1-xxx-xxx-xxx</a></p>
-          </div>
-        )}
+        {showContact && <ContactInfo email="xxx@example.com" phone="+1-xxx-xxx-xxx" />}
 
         <div className="socials">
-          <a href="https://twitter.com/" target="_blank" rel="noreferrer" className="icon-link">T</a>
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="icon-link">G</a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="icon-link">L</a>
+          <a 
+            href="https://www.instagram.com/yama.shita9?igsh=MTJhMDh3dXNnb2Npcg%3D%3D&utm_source=qr" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="icon-link"
+            >
+              <FaInstagram />
+            </a>
+          <a href="https://github.com/yamadaxxx09" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="icon-link"
+            >
+              <FaGithub />
+            </a>
+          <a href="https://www.linkedin.com/in/shizuka-yamashita-a98440363?trk=contact-info"
+            target="_blank" 
+            rel="noreferrer" 
+            className="icon-link"
+            >
+              <FaLinkedin />
+            </a>
         </div>
       </div>
     </article>
