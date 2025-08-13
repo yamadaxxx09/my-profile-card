@@ -1,21 +1,27 @@
 import { useState } from "react";
 import profilePic from "../assets/Img/profilePic.jpg"; 
 
+function capitalizeWords(str) {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
 export default function ProfileCard() {
   const [showContact, setShowContact] = useState(false);
+
+  const fullName = capitalizeWords("shizuka yamashita");
 
   return (
     <article className="hero-card">
 
       <div className="hero-photo-wrap">
-        <img className="hero-photo" src={profilePic} alt="Shizuka Yamashita" />
+        <img className="hero-photo" src={profilePic} alt="{fallName}" />
         <div className="photo-overlay" />
       </div>
 
       <div className="hero-panel">
         <p className="overline">About me</p>
         <h1 className="display-name">
-          Shizuka<br />Yamashita
+          {fullName.split(" ")[0]}<br />{fullName.split(" ")[1]}
         </h1>
         <p className="bio">
           Software Engineering<br />
